@@ -46,8 +46,8 @@ current_focus:
         <br/><br/>
       </td>
       <td align="center" width="33%">
-        <h3>🏛️ 北京大学 AI 俱乐部</h3>
-        <sub><b>Peking University AI Club (PKU AI)</b></sub>
+        <h3>🏛️ 北京大学 LLM 俱乐部</h3>
+        <sub><b>Peking University LLM Club (PKU LLM)</b></sub>
         <br/><br/>
       </td>
       <td align="center" width="33%">
