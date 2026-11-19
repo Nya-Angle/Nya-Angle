@@ -1,74 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="100%" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" fill="none">
   <style>
-    .bg { fill: #09090b; }
-    .border { stroke: #27272a; stroke-width: 1; }
-    .grid { stroke: #18181b; stroke-width: 1; }
+    .bg { fill: #0a0a0c; }
+    .frame { stroke: #222226; stroke-width: 1; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .title { fill: #fafafa; font-size: 38px; font-weight: 700; letter-spacing: -0.03em; }
-    .sub { fill: #a1a1aa; font-size: 13px; letter-spacing: 0.04em; }
-    .tag { fill: #71717a; font-size: 11px; letter-spacing: 0.12em; }
-    .accent { fill: #38bdf8; }
-    .node-line { stroke: #27272a; stroke-width: 1; }
-    .pulse-line {
-      stroke: url(#grad);
-      stroke-width: 1.5;
-      stroke-dasharray: 90 420;
-      animation: flow 5s linear infinite;
-    }
-    .blink { animation: pulse 2.4s ease-in-out infinite; }
-    .cursor { animation: blink 1.1s step-end infinite; }
+    .kicker { fill: #71717a; font-size: 11px; letter-spacing: 0.16em; }
+    .title { fill: #f4f4f5; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; }
+    .handle { fill: #52525b; font-size: 20px; font-weight: 400; }
+    .desc { fill: #a1a1aa; font-size: 14px; letter-spacing: 0.02em; }
+    .stack { fill: #71717a; font-size: 11.5px; letter-spacing: 0.06em; }
 
-    @keyframes flow {
-      0% { stroke-dashoffset: 510; }
-      100% { stroke-dashoffset: 0; }
+    .orbit { transform-origin: 690px 140px; }
+    .o1 { animation: spin 28s linear infinite; }
+    .o2 { animation: spin-rev 38s linear infinite; }
+    .o3 { animation: spin 46s linear infinite; }
+    .o4 { animation: breath 8s ease-in-out infinite; }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
+    @keyframes spin-rev {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
     }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    @keyframes breath {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.55; }
     }
   </style>
 
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#a1a1aa" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.35"/>
     </linearGradient>
-    <pattern id="smallGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" class="grid"/>
-    </pattern>
+    <clipPath id="clip">
+      <rect width="900" height="280" rx="12"/>
+    </clipPath>
   </defs>
 
-  <!-- Base Canvas -->
-  <rect width="900" height="260" rx="12" class="bg"/>
-  <rect width="900" height="260" rx="12" fill="url(#smallGrid)"/>
-  <rect x="0.5" y="0.5" width="899" height="259" rx="11.5" class="border"/>
+  <g clip-path="url(#clip)">
+    <rect width="900" height="280" class="bg"/>
+    <circle cx="690" cy="140" r="220" fill="url(#glow)"/>
 
-  <!-- Top Telemetry Bar -->
-  <circle cx="32" cy="30" r="3.5" class="accent blink"/>
-  <text x="46" y="34" class="mono tag">SYS.ONLINE // MANHATTAN, NY</text>
-  <text x="868" y="34" text-anchor="end" class="mono tag">PORTAL: GETSTH.TODAY</text>
-  <line x1="24" y1="52" x2="876" y2="52" class="node-line"/>
-  <line x1="24" y1="52" x2="876" y2="52" class="pulse-line"/>
+    <!-- 右侧极简参数化几何轨道 -->
+    <g>
+      <ellipse cx="690" cy="140" rx="135" ry="48" stroke="url(#ring)" stroke-width="0.75" class="orbit o1" transform="rotate(-18 690 140)"/>
+      <ellipse cx="690" cy="140" rx="135" ry="48" stroke="url(#ring)" stroke-width="0.75" class="orbit o2" transform="rotate(42 690 140)"/>
+      <ellipse cx="690" cy="140" rx="105" ry="105" stroke="#ffffff" stroke-opacity="0.08" stroke-width="0.75" stroke-dasharray="3 6" class="orbit o3"/>
+      <ellipse cx="690" cy="140" rx="72" ry="26" stroke="#e4e4e7" stroke-width="0.75" class="orbit o1 o4" transform="rotate(75 690 140)"/>
+      <circle cx="690" cy="140" r="2.5" fill="#e4e4e7" fill-opacity="0.75"/>
+    </g>
 
-  <!-- Main Identity -->
-  <text x="32" y="122" class="sans title">Angle CC</text>
-  <text x="208" y="122" class="mono" fill="#52525b" font-size="22" font-weight="500">@Nya-Angle</text>
-  <rect x="352" y="101" width="9" height="22" fill="#38bdf8" class="cursor"/>
+    <!-- 左侧极简排版 -->
+    <text x="48" y="54" class="mono kicker">MANHATTAN, NY  ·  GETSTH.TODAY</text>
 
-  <text x="32" y="156" class="sans sub">Architecting local-first desktop AI agents, reflective memory systems, and interactive LLM tutoring.</text>
+    <text x="48" y="128" class="sans title">Angle CC</text>
+    <text x="232" y="128" class="mono handle">/ Nya-Angle</text>
 
-  <!-- Bottom Architecture Nodes -->
-  <line x1="24" y1="196" x2="876" y2="196" class="node-line"/>
+    <text x="48" y="168" class="sans desc">专注于端侧开源 AI 智能体、长期记忆架构与大模型交互式伴学系统</text>
 
-  <g transform="translate(32, 226)">
-    <text x="0" y="0" class="mono tag">STACK</text>
-    <text x="64" y="0" class="mono" fill="#e4e4e7" font-size="12">AXTree · MultiHop-RAG · Long-Term Memory · MCP · WebGPU</text>
-    <text x="836" y="0" text-anchor="end" class="mono tag" fill="#38bdf8">[ LOCAL-FIRST ]</text>
+    <line x1="48" y1="210" x2="460" y2="210" stroke="#222226" stroke-width="1"/>
+    <text x="48" y="238" class="mono stack">AXTree   ·   MultiHop-RAG   ·   Long-Term Memory   ·   MCP   ·   WebGPU</text>
   </g>
+
+  <rect x="0.5" y="0.5" width="899" height="279" rx="11.5" class="frame"/>
 </svg>
