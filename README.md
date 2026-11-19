@@ -1,31 +1,38 @@
 <div align="center">
   <a href="https://getsth.today">
-    <img src="./hero.svg" width="100%" alt="Nya-Angle — Local-First AI Systems" />
+    <img src="./hero.svg" width="100%" alt="Nya-Angle" />
   </a>
 </div>
 
 <br/>
 
-### Selected Works
+### 项目与创作
 
-| System | Domain | Architecture & Focus |
-| :--- | :--- | :--- |
-| [**CDUT-Studio**](https://github.com/Nya-Angle/CDUT-Studio) | `Desktop Agent` | Local-first AI workbench integrating `AXTree` browser automation, `MultiHop-RAG`, reflective long-term memory, and a `WebGPU` scientific computing lab. |
-| [**Origin-Academy**](https://github.com/Nya-Angle/Origin-Academy) | `EdTech / LLM` | Interactive tutoring engine built around CDUT's Wenqu Academy, supporting mainstream LLMs for end-to-end guided learning. |
-| [**Mini-Nya**](https://github.com/Nya-Angle/Mini-Nya) | `Sandbox` | Compact laboratory for experimental prototypes and creative systems. |
+- **[CDUT-Studio](https://github.com/Nya-Angle/CDUT-Studio)**  
+  端侧开源 AI 智能体工作台。集成 `AXTree` 浏览器自动化、`MultiHop-RAG`、长期记忆反思机制与 `WebGPU` 科学计算实验室的 Local-First 桌面级 Agent 平台。
+
+- **[Origin-Academy](https://github.com/Nya-Angle/Origin-Academy)**  
+  问渠学堂智能伴学系统。深度解析成都理工大学“问渠学堂”平台体系，原生支持接入主流大语言模型，实现全流程智能辅导与交互式伴学。
+
+- **[Mini-Nya](https://github.com/Nya-Angle/Mini-Nya)**  
+  个人专属的精巧实验与创意项目空间。
+
+<br/>
+
+### 探索方向
+
+端侧优先（Local-First）桌面智能体架构、`AXTree` 无障碍树驱动的浏览器自动化、具备反思能力的长期记忆系统、MCP 协议生态，以及基于 `WebGPU` 的端侧科学计算与推理。
 
 <br/>
 
-### Affiliations
+### 所在社群
 
-```text
-├── CDUT Artificial Intelligence Association
-├── Peking University LLM Club (PKU LLM)
-└── Chengdu University Computer Science Association
-```
+成都理工大学人工智能协会 · 北京大学 LLM 俱乐部 · 成都大学计算机协会
 
 <br/>
+
+---
 
 <div align="right">
-  <sub><i>"Maybe our story isn't over yet... And my sister... If you once knew me, that will be our eternal secret."</i></sub>
+  <sub><i>也许我们的故事还没结束……如果你曾认识我，那将是我们永恒的秘密。</i></sub>
 </div>
